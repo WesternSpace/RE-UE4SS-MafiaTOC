@@ -225,7 +225,7 @@ class ReleaseHandler:
         except subprocess.CalledProcessError:
             print('Error: git describe failed. Make sure the release has been tagged.')
             sys.exit(1)
-        main_zip_name = f'zDEV-UE4SS_{version}' if self.is_dev_release else f'UE4SS_{version}'
+        main_zip_name = f'zDEV-UE4SS-MafiaTOC_{version}' if self.is_dev_release else f'UE4SS-MafiaTOC_{version}'
         output = os.path.join(self.release_output, main_zip_name)
         shutil.make_archive(output, 'zip', self.staging_dir)
         print(f'Created package {output}.zip')
@@ -235,8 +235,8 @@ class ReleaseHandler:
 
 class Packager:
     """
-    "Release" refers to the zip that is distributed to the end users. It should be in the format UE4SS_<version>.zip and contains only the necessary files.
-    "Dev" refers to the zip that is used for development. It should be in the format zDEV-UE4SS_<version>.zip and contains all the files, pdbs and docs.
+    "Release" refers to the zip that is distributed to the end users. It should be in the format UE4SS-MafiaTOC_<version>.zip and contains only the necessary files.
+    "Dev" refers to the zip that is used for development. It should be in the format zDEV-UE4SS-MafiaTOC_<version>.zip and contains all the files, pdbs and docs.
     """
 
     def __init__(self, args):
