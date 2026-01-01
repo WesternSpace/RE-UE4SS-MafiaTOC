@@ -67,4 +67,4 @@ jobs:
           title: Update UE Submodule
           body: ${{ env.COMMITS_BODY }}
           branch: update-ue-submodule
-          base: main
+          base: upstream
